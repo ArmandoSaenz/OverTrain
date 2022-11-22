@@ -7139,7 +7139,7 @@ WHERE        (idcli = @Original_idcli)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[10];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[11];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        idcli, ncli, dir, telefono, obs, huella, foto, FLimite, area1, area" +
@@ -7210,10 +7210,23 @@ WHERE        (idcli = @Original_idcli)";
             this._commandCollection[4].Parameters.Add(param);
             this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        FLimite, area1, area2, area3, dir, empresa, fechapago, foto, huella" +
+            this._commandCollection[5].CommandText = "SELECT        idcli, ncli, dir, telefono, obs, huella, foto, FLimite, area1, area" +
+                "2, area3, empresa, fechapago, id, date_modify\r\nFROM            cli00 where id = " +
+                "@id";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@id";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id";
+            this._commandCollection[5].Parameters.Add(param);
+            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT        FLimite, area1, area2, area3, dir, empresa, fechapago, foto, huella" +
                 ", idcli, ncli, obs, telefono, id, date_modify\r\nFROM            cli00\r\nWHERE     " +
                 "   (ncli LIKE @ncli)";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@ncli";
             param.DbType = global::System.Data.DbType.String;
@@ -7221,48 +7234,48 @@ WHERE        (idcli = @Original_idcli)";
             param.Size = 150;
             param.IsNullable = true;
             param.SourceColumn = "ncli";
-            this._commandCollection[5].Parameters.Add(param);
-            this._commandCollection[6] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        idcli, ncli, dir, telefono, obs, huella, foto, FLimite, area1, area" +
-                "2, area3, empresa, fechapago, id, date_modify\r\nFROM            cli00\r\nWHERE     " +
-                "   (FLimite = @fecha)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "FLimite";
             this._commandCollection[6].Parameters.Add(param);
             this._commandCollection[7] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = "SELECT        idcli, ncli, dir, telefono, obs, huella, foto, FLimite, area1, area" +
                 "2, area3, empresa, fechapago, id, date_modify\r\nFROM            cli00\r\nWHERE     " +
-                "   (fechapago > @fecha) OR\r\n                         (fechapago IS NULL)";
+                "   (FLimite = @fecha)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@fecha";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "fechapago";
+            param.SourceColumn = "FLimite";
             this._commandCollection[7].Parameters.Add(param);
             this._commandCollection[8] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT Max(ID) FROM cli00";
+            this._commandCollection[8].CommandText = "SELECT        idcli, ncli, dir, telefono, obs, huella, foto, FLimite, area1, area" +
+                "2, area3, empresa, fechapago, id, date_modify\r\nFROM            cli00\r\nWHERE     " +
+                "   (fechapago > @fecha) OR\r\n                         (fechapago IS NULL)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@fecha";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "fechapago";
+            this._commandCollection[8].Parameters.Add(param);
             this._commandCollection[9] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "UPDATE       cli00\r\nSET  date_modify = @date_modify\r\nWHERE        idcli = @idcli";
+            this._commandCollection[9].CommandText = "SELECT Max(ID) FROM cli00";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[10] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = "UPDATE       cli00\r\nSET  date_modify = @date_modify\r\nWHERE        idcli = @idcli";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@date_modify";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "date_modify";
-            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[10].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idcli";
             param.DbType = global::System.Data.DbType.Int32;
@@ -7270,7 +7283,7 @@ WHERE        (idcli = @Original_idcli)";
             param.IsNullable = true;
             param.SourceColumn = "idcli";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[10].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7315,8 +7328,34 @@ WHERE        (idcli = @Original_idcli)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByNombre(Link.cli00DataTable dataTable, string ncli) {
+        public virtual int FillByID(Link.cli00DataTable dataTable, int id) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Link.cli00DataTable GetDataByID(int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            Link.cli00DataTable dataTable = new Link.cli00DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNombre(Link.cli00DataTable dataTable, string ncli) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((ncli == null)) {
                 throw new global::System.ArgumentNullException("ncli");
             }
@@ -7335,7 +7374,7 @@ WHERE        (idcli = @Original_idcli)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByVencidos(Link.cli00DataTable dataTable, global::System.Nullable<global::System.DateTime> fecha) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((fecha.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha.Value));
             }
@@ -7354,7 +7393,7 @@ WHERE        (idcli = @Original_idcli)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int ListaCliVigentes(Link.cli00DataTable dataTable, global::System.Nullable<global::System.DateTime> fecha) {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((fecha.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha.Value));
             }
@@ -7752,7 +7791,7 @@ WHERE        (idcli = @Original_idcli)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> MaxID() {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[8];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[9];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7781,7 +7820,7 @@ WHERE        (idcli = @Original_idcli)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateDateModify(System.DateTime date_modify, int idcli) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[9];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[10];
             command.Parameters[0].Value = ((System.DateTime)(date_modify));
             command.Parameters[1].Value = ((int)(idcli));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;

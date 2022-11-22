@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.IO;
 namespace WindowsFormsApplication1
 {
     public partial class RegistroDiario : Form
@@ -166,7 +166,22 @@ namespace WindowsFormsApplication1
 
         private void tbID_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            int id;
+            if (e.KeyChar == (char)13)
+            {
+                if (!int.TryParse(tbID.Text, out id))
+                {
+                    MessageBox.Show("El ID ingresado no es válido", "ID incorreco", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                if (cli00TableAdapter.FillByID(link.cli00, id) == 1)
+                {
+                    Registro();
+                }
+                else
+                {
+                    MessageBox.Show("No es encontro cliente con le ID " + id.ToString(), "ID no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
         }
     }
 
