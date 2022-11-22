@@ -172,14 +172,15 @@ namespace WindowsFormsApplication1
                 if (!int.TryParse(tbID.Text, out id))
                 {
                     MessageBox.Show("El ID ingresado no es válido", "ID incorreco", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
-                if (cli00TableAdapter.FillByID(link.cli00, id) == 1)
+                if ( id >= 0 && cli00TableAdapter.FillByID(link.cli00, id) == 1 )
                 {
                     Registro();
                 }
                 else
                 {
-                    MessageBox.Show("No es encontro cliente con le ID " + id.ToString(), "ID no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("No es encontro cliente con el ID " + id.ToString(), "ID no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }

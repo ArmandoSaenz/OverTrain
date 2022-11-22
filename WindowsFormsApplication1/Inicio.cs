@@ -394,7 +394,8 @@ namespace WindowsFormsApplication1
 
         private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Inicio.Status == SynchronousStatus.Initialize ||Inicio.Status == SynchronousStatus.Download || Inicio.Status == SynchronousStatus.None)
+            Utilities.FrmMonitor.Show("Cerrando conexión");
+            if (Inicio.Status == SynchronousStatus.Initialize || Inicio.Status == SynchronousStatus.Download || Inicio.Status == SynchronousStatus.None)
             {
                 return;
             }

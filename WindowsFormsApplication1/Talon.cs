@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace WindowsFormsApplication1
 {
@@ -83,16 +84,18 @@ namespace WindowsFormsApplication1
 
                 if (WindowsFormsApplication1.Properties.Settings.Default.Ticket58)
                 {
-                    Ticket = new Ticket58mm();
+                    Ticket = new Ticket58();
                 }
                 else if (WindowsFormsApplication1.Properties.Settings.Default.Ticket80)
                 {
-                    Ticket = new Ticket80mm();
+                    Ticket = new Ticket80();
                 }
                 Ticket.SetDataSource(link);
                 Ticket.SetParameterValue(0, WindowsFormsApplication1.Properties.Settings.Default.encabezado);
                 Ticket.SetParameterValue(1, link.cli00.Count > 0 ? link.cli00[0].id : 0);
                 Ticket.PrintOptions.PrinterName = WindowsFormsApplication1.Properties.Settings.Default.TicketPrinter;
+                /*FrmTicketViewer frmTicket = new FrmTicketViewer(Ticket);
+                frmTicket.ShowDialog();*/
                 Ticket.PrintToPrinter(1, false, 0, 0);
             }
             while (MessageBox.Show("¿Imprimir ticket?", "", MessageBoxButtons.YesNo) == DialogResult.Yes);

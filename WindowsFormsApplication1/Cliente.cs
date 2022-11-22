@@ -25,6 +25,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             datos.DataBindings.Add("Huella", cli00BindingSource, "huella");
             BuscarDispositivos();
+            link.cli00.empresaColumn.DefaultValue = WindowsFormsApplication1.Properties.Settings.Default.Sucursal;
         }
 
         public void CargarDispositivos(FilterInfoCollection Dispositivos)
@@ -155,9 +156,18 @@ namespace WindowsFormsApplication1
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             link.cli00.date_modifyColumn.DefaultValue = DateTime.Now;
-            bindingNavigatorAddNewItem.PerformClick();
+            try
+            {
+                bindingNavigatorAddNewItem.PerformClick();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             fLimite.Value = DateTime.Now;
             nuevo = true;
+            //tbEmpresa.Text = WindowsFormsApplication1.Properties.Settings.Default.Sucursal;
         }
 
         private void btnPago_Click(object sender, EventArgs e)

@@ -52,6 +52,7 @@
             this.Controls.Add(this.lMensaje);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMonitor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMonitor";
             this.ResumeLayout(false);
 

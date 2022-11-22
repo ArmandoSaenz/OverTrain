@@ -103,5 +103,17 @@ namespace WindowsFormsApplication1.Properties {
                 this["TicketPrinter"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Sucursal {
+            get {
+                return ((string)(this["Sucursal"]));
+            }
+            set {
+                this["Sucursal"] = value;
+            }
+        }
     }
 }

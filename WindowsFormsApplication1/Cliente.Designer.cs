@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tInfo = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCli = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbEmpresa = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -169,7 +169,7 @@
             this.tInfo.Controls.Add(this.label11);
             this.tInfo.Controls.Add(this.label1);
             this.tInfo.Controls.Add(this.btnCli);
-            this.tInfo.Controls.Add(this.textBox5);
+            this.tInfo.Controls.Add(this.tbEmpresa);
             this.tInfo.Controls.Add(this.label10);
             this.tInfo.Controls.Add(this.dateTimePicker1);
             this.tInfo.Controls.Add(this.label9);
@@ -257,15 +257,15 @@
             this.btnCli.UseVisualStyleBackColor = true;
             this.btnCli.Click += new System.EventHandler(this.btnCli_Click);
             // 
-            // textBox5
+            // tbEmpresa
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cli00BindingSource, "empresa", true));
-            this.textBox5.Location = new System.Drawing.Point(93, 169);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(236, 20);
-            this.textBox5.TabIndex = 27;
+            this.tbEmpresa.BackColor = System.Drawing.Color.White;
+            this.tbEmpresa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbEmpresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cli00BindingSource, "empresa", true));
+            this.tbEmpresa.Location = new System.Drawing.Point(93, 169);
+            this.tbEmpresa.Name = "tbEmpresa";
+            this.tbEmpresa.Size = new System.Drawing.Size(236, 20);
+            this.tbEmpresa.TabIndex = 27;
             // 
             // label10
             // 
@@ -896,9 +896,9 @@
             // 
             this.fechaelaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.fechaelaDataGridViewTextBoxColumn.DataPropertyName = "fechaela";
-            dataGridViewCellStyle7.Format = "G";
-            dataGridViewCellStyle7.NullValue = null;
-            this.fechaelaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Format = "G";
+            dataGridViewCellStyle1.NullValue = null;
+            this.fechaelaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.fechaelaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaelaDataGridViewTextBoxColumn.Name = "fechaelaDataGridViewTextBoxColumn";
             this.fechaelaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -917,9 +917,9 @@
             // 
             this.pagoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.pagoDataGridViewTextBoxColumn.DataPropertyName = "pago";
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.pagoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.pagoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.pagoDataGridViewTextBoxColumn.HeaderText = "Pago";
             this.pagoDataGridViewTextBoxColumn.Name = "pagoDataGridViewTextBoxColumn";
             this.pagoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -938,9 +938,9 @@
             // 
             this.fechainiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.fechainiDataGridViewTextBoxColumn.DataPropertyName = "fechaini";
-            dataGridViewCellStyle9.Format = "d";
-            dataGridViewCellStyle9.NullValue = null;
-            this.fechainiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.fechainiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.fechainiDataGridViewTextBoxColumn.HeaderText = "Inicio";
             this.fechainiDataGridViewTextBoxColumn.Name = "fechainiDataGridViewTextBoxColumn";
             this.fechainiDataGridViewTextBoxColumn.ReadOnly = true;
@@ -950,9 +950,9 @@
             // 
             this.fechafinDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.fechafinDataGridViewTextBoxColumn.DataPropertyName = "fechafin";
-            dataGridViewCellStyle10.Format = "d";
-            dataGridViewCellStyle10.NullValue = null;
-            this.fechafinDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.fechafinDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.fechafinDataGridViewTextBoxColumn.HeaderText = "Fin";
             this.fechafinDataGridViewTextBoxColumn.Name = "fechafinDataGridViewTextBoxColumn";
             this.fechafinDataGridViewTextBoxColumn.ReadOnly = true;
@@ -962,9 +962,9 @@
             // 
             this.fechapagoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.fechapagoDataGridViewTextBoxColumn.DataPropertyName = "fechapago";
-            dataGridViewCellStyle11.Format = "d";
-            dataGridViewCellStyle11.NullValue = null;
-            this.fechapagoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.fechapagoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.fechapagoDataGridViewTextBoxColumn.HeaderText = "Prox Pago";
             this.fechapagoDataGridViewTextBoxColumn.Name = "fechapagoDataGridViewTextBoxColumn";
             this.fechapagoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1024,9 +1024,9 @@
             // 
             this.fechaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
-            dataGridViewCellStyle12.Format = "F";
-            dataGridViewCellStyle12.NullValue = null;
-            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Format = "F";
+            dataGridViewCellStyle6.NullValue = null;
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1194,7 +1194,7 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnPago;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbEmpresa;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label9;

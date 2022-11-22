@@ -48,14 +48,17 @@
             this.lMachineName = new System.Windows.Forms.Label();
             this.lAppFolder = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbPrinters = new System.Windows.Forms.ComboBox();
-            this.rbTicket58mm = new System.Windows.Forms.RadioButton();
             this.tbTicket80mm = new System.Windows.Forms.RadioButton();
+            this.rbTicket58mm = new System.Windows.Forms.RadioButton();
+            this.cbPrinters = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tbSucursal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.conf00BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.link)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -227,22 +230,24 @@
             this.groupBox3.Controls.Add(this.tbTicket80mm);
             this.groupBox3.Controls.Add(this.rbTicket58mm);
             this.groupBox3.Controls.Add(this.cbPrinters);
-            this.groupBox3.Location = new System.Drawing.Point(567, 9);
+            this.groupBox3.Location = new System.Drawing.Point(558, 9);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(191, 132);
+            this.groupBox3.Size = new System.Drawing.Size(200, 89);
             this.groupBox3.TabIndex = 41;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Impresion de Tickets";
             // 
-            // cbPrinters
+            // tbTicket80mm
             // 
-            this.cbPrinters.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::WindowsFormsApplication1.Properties.Settings.Default, "TicketPrinter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cbPrinters.FormattingEnabled = true;
-            this.cbPrinters.Location = new System.Drawing.Point(6, 16);
-            this.cbPrinters.Name = "cbPrinters";
-            this.cbPrinters.Size = new System.Drawing.Size(179, 21);
-            this.cbPrinters.TabIndex = 0;
-            this.cbPrinters.Text = global::WindowsFormsApplication1.Properties.Settings.Default.TicketPrinter;
+            this.tbTicket80mm.AutoSize = true;
+            this.tbTicket80mm.Checked = global::WindowsFormsApplication1.Properties.Settings.Default.Ticket80;
+            this.tbTicket80mm.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WindowsFormsApplication1.Properties.Settings.Default, "Ticket80", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbTicket80mm.Location = new System.Drawing.Point(6, 66);
+            this.tbTicket80mm.Name = "tbTicket80mm";
+            this.tbTicket80mm.Size = new System.Drawing.Size(56, 17);
+            this.tbTicket80mm.TabIndex = 2;
+            this.tbTicket80mm.Text = "80 mm";
+            this.tbTicket80mm.UseVisualStyleBackColor = true;
             // 
             // rbTicket58mm
             // 
@@ -257,23 +262,42 @@
             this.rbTicket58mm.Text = "58 mm";
             this.rbTicket58mm.UseVisualStyleBackColor = true;
             // 
-            // tbTicket80mm
+            // cbPrinters
             // 
-            this.tbTicket80mm.AutoSize = true;
-            this.tbTicket80mm.Checked = global::WindowsFormsApplication1.Properties.Settings.Default.Ticket80;
-            this.tbTicket80mm.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WindowsFormsApplication1.Properties.Settings.Default, "Ticket80", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbTicket80mm.Location = new System.Drawing.Point(6, 66);
-            this.tbTicket80mm.Name = "tbTicket80mm";
-            this.tbTicket80mm.Size = new System.Drawing.Size(56, 17);
-            this.tbTicket80mm.TabIndex = 2;
-            this.tbTicket80mm.Text = "80 mm";
-            this.tbTicket80mm.UseVisualStyleBackColor = true;
+            this.cbPrinters.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::WindowsFormsApplication1.Properties.Settings.Default, "TicketPrinter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbPrinters.FormattingEnabled = true;
+            this.cbPrinters.Location = new System.Drawing.Point(6, 16);
+            this.cbPrinters.Name = "cbPrinters";
+            this.cbPrinters.Size = new System.Drawing.Size(179, 21);
+            this.cbPrinters.TabIndex = 0;
+            this.cbPrinters.Text = global::WindowsFormsApplication1.Properties.Settings.Default.TicketPrinter;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.tbSucursal);
+            this.groupBox4.Location = new System.Drawing.Point(558, 104);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(200, 53);
+            this.groupBox4.TabIndex = 42;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Nombre de la sucursal";
+            // 
+            // tbSucursal
+            // 
+            this.tbSucursal.BackColor = System.Drawing.Color.White;
+            this.tbSucursal.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::WindowsFormsApplication1.Properties.Settings.Default, "Sucursal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbSucursal.Location = new System.Drawing.Point(6, 20);
+            this.tbSucursal.Name = "tbSucursal";
+            this.tbSucursal.Size = new System.Drawing.Size(179, 20);
+            this.tbSucursal.TabIndex = 36;
+            this.tbSucursal.Text = global::WindowsFormsApplication1.Properties.Settings.Default.Sucursal;
             // 
             // Configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 277);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.lAppFolder);
             this.Controls.Add(this.groupBox2);
@@ -282,10 +306,11 @@
             this.Controls.Add(this.lMachineName);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAceptar);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::WindowsFormsApplication1.Properties.Settings.Default, "Sucursal", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Configuracion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Configuracion";
+            this.Text = global::WindowsFormsApplication1.Properties.Settings.Default.Sucursal;
             this.Load += new System.EventHandler(this.Configuracion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.conf00BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.link)).EndInit();
@@ -294,6 +319,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,5 +349,7 @@
         private System.Windows.Forms.ComboBox cbPrinters;
         private System.Windows.Forms.RadioButton tbTicket80mm;
         private System.Windows.Forms.RadioButton rbTicket58mm;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox tbSucursal;
     }
 }

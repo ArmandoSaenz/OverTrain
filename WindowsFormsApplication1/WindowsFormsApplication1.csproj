@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>23</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -73,10 +73,12 @@
     <Reference Include="AForge.Video, Version=2.1.0.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\AForge.Video.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="AForge.Video.DirectShow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\AForge.Video.DirectShow.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -163,6 +165,12 @@
     </Compile>
     <Compile Include="Corte.Designer.cs">
       <DependentUpon>Corte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTicketViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTicketViewer.Designer.cs">
+      <DependentUpon>FrmTicketViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="impAcceso.cs">
       <AutoGen>True</AutoGen>
@@ -363,17 +371,15 @@
     <Compile Include="Talon.Designer.cs">
       <DependentUpon>Talon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ticket58mm.cs">
+    <Compile Include="Ticket58.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Ticket58mm.rpt</DependentUpon>
-      <SubType>Component</SubType>
+      <DependentUpon>Ticket58.rpt</DependentUpon>
     </Compile>
-    <Compile Include="Ticket80mm.cs">
+    <Compile Include="Ticket80.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Ticket80mm.rpt</DependentUpon>
-      <SubType>Component</SubType>
+      <DependentUpon>Ticket80.rpt</DependentUpon>
     </Compile>
     <Compile Include="Utilities\FrmMonitor.cs">
       <SubType>Form</SubType>
@@ -381,6 +387,7 @@
     <Compile Include="Utilities\FrmMonitor.Designer.cs">
       <DependentUpon>FrmMonitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Printers.cs" />
     <Compile Include="Utilities\Table2List.cs" />
     <Compile Include="VarPub.cs" />
     <Compile Include="Ventas.cs">
@@ -403,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Corte.resx">
       <DependentUpon>Corte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTicketViewer.resx">
+      <DependentUpon>FrmTicketViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="impAcceso.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -514,13 +524,13 @@
     <EmbeddedResource Include="Talon.resx">
       <DependentUpon>Talon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ticket58mm.rpt">
+    <EmbeddedResource Include="Ticket58.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Ticket58mm.cs</LastGenOutput>
+      <LastGenOutput>Ticket58.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ticket80mm.rpt">
+    <EmbeddedResource Include="Ticket80.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Ticket80mm.cs</LastGenOutput>
+      <LastGenOutput>Ticket80.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilities\FrmMonitor.resx">
       <DependentUpon>FrmMonitor.cs</DependentUpon>

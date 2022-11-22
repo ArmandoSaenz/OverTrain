@@ -16,14 +16,14 @@ namespace WindowsFormsApplication1 {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Ticket80mm : ReportClass {
+    public class Ticket58 : ReportClass {
         
-        public Ticket80mm() {
+        public Ticket58() {
         }
         
         public override string ResourceName {
             get {
-                return "Ticket80mm.rpt";
+                return "Ticket58.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1 {
         
         public override string FullResourceName {
             get {
-                return "WindowsFormsApplication1.Ticket80mm.rpt";
+                return "WindowsFormsApplication1.Ticket58.rpt";
             }
             set {
                 // Do nothing
@@ -106,9 +106,9 @@ namespace WindowsFormsApplication1 {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedTicket80mm : Component, ICachedReport {
+    public class CachedTicket58 : Component, ICachedReport {
         
-        public CachedTicket80mm() {
+        public CachedTicket58() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace WindowsFormsApplication1 {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Ticket80mm rpt = new Ticket80mm();
+            Ticket58 rpt = new Ticket58();
             rpt.Site = this.Site;
             return rpt;
         }
